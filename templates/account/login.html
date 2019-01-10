@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+     <div class="text-center">
+      <h1>Aditya News</h1>
+    </div>
+
+    <!-- Login Form -->
+    <form method="post">
+      {% csrf_token %}
+        {{ form.as_p }}
+        <div class="text-center">
+            <button class="btn btn-info">Login</button>
+            <p class="text-center">Don't have an account yet?Create yours <a href="{% url 'register' %}">here</a>.</p>
+        </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Go to the Site</a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+<!-- <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="text-center">
+            <button class="btn btn-info">Login</button>
+            <p class="text-center">Don't have an account yet?Create yours <a href="#">here</a>.</p>
+        </div>
+    </form>
+ -->

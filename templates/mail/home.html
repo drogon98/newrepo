@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 text-center" >
+            <h1>Active</h1>
+        </div>
+        <div class="col-lg-10 col-md-10" style='background-color:#FF0;'>
+            <h1 class=" text-center"><strong>Feed</strong></h1>
+            {% for user in users %}
+                <div class="media" style="background-color:#FFF;">
+                    <div class="media-body">
+                        <h1 class="mt-0">{{ user.username }}</h1>
+                        <p>{{ user.username }}  has joined the channel</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
